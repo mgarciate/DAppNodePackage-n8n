@@ -1,0 +1,6 @@
+ARG UPSTREAM_VERSION
+FROM n8nio/n8n:${UPSTREAM_VERSION}
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+  
+  

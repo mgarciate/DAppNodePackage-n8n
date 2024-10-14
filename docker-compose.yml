@@ -1,0 +1,19 @@
+version: "3.5"
+services:
+  n8n.public.dappnode.eth:
+    image: n8n.public.dappnode.eth:0.1.0
+    build:
+      context: ./build
+      args:
+        UPSTREAM_VERSION: 1.62.5
+    restart: unless-stopped
+    environment:
+      - N8N_HOST=http://n8n.public.dappnode
+      - N8N_PORT=5678
+      - NODE_ENV=production
+      - GENERIC_TIMEZONE=Europe/Madrid
+      - N8N_SECURE_COOKIE=False
+    volumes:
+      - n8n-data:/home/node/.n8n
+volumes:
+  n8n-data: {}
