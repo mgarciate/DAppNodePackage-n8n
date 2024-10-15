@@ -1,7 +1,7 @@
 version: "3.5"
 services:
-  n8n.public.dappnode.eth:
-    image: n8n.public.dappnode.eth:0.1.0
+  n8n:
+    image: n8n.public.dappnode.eth:0.1.1
     build:
       context: ./build
       args:
@@ -9,9 +9,9 @@ services:
     restart: unless-stopped
     environment:
       - N8N_HOST=n8n.public.dappnode
-      - N8N_PORT=5678
+      - N8N_PORT=80
       - NODE_ENV=production
-      - GENERIC_TIMEZONE=Europe/Madrid
+      - GENERIC_TIMEZONE=Etc/UTC
       - N8N_SECURE_COOKIE=False
     volumes:
       - n8n-data:/home/node/.n8n

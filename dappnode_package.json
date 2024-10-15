@@ -1,12 +1,41 @@
 {
   "name": "n8n.public.dappnode.eth",
-  "version": "0.1.0",
-  "description": "description",
+  "version": "0.1.1",
+  "upstreamVersion": "1.62.5",
+  "upstreamRepo": "n8n-io/n8n",
+  "upstreamArg": "UPSTREAM_VERSION",
+  "shortDescription": "An extendable workflow automation tool.",
+  "description": "n8n is an extendable workflow automation tool which enables you to connect your favorite apps, services, and APIs.",
   "type": "service",
   "author": "mgarciate",
   "categories": ["Developer tools"],
   "links": {
-    "homepage": "https://your-project-homepage-or-docs.io"
+    "ui": "http://n8n.public.dappnode",
+    "homepage": "https://github.com/n8n-io/n8n"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgarciate/DAppNodePackage-n8n.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mgarciate/DAppNodePackage-n8n/issues"
+  },
+  "exposable": [
+    {
+      "name": "Expose n8n UI & API",
+      "description": "Expose n8n UI & API",
+      "serviceName": "n8n",
+      "fromSubdomain": "n8n",
+      "port": 80,
+      "exposeByDefault": false
+    }
+  ],
+  "backup": [
+    {
+      "name": "data",
+      "path": "/home/node/.n8n",
+      "service": "n8n"
+    }
+  ],
   "license": "GPL-3.0"
 }
